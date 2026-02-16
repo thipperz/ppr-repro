@@ -5,4 +5,17 @@ import doQueue from '@opennextjs/cloudflare/overrides/queue/do-queue'
 import doShardedTagCache from '@opennextjs/cloudflare/overrides/tag-cache/do-sharded-tag-cache'
 import { purgeCache } from '@opennextjs/cloudflare/overrides/cache-purge/index'
 
-export default defineCloudflareConfig();
+export default defineCloudflareConfig({
+    incrementalCache: withRegionalCache(r2IncrementalCache, {
+        mode: 'long-lived',
+    }),
+
+    queue: doQueue,
+
+    tagCache: doShardedTagCache({
+        baseShardSize: 8,
+        regionalCache: true,
+        regionalCacheTtlSec: 10,
+    }),
+    cachePurge: purgeCache({ type: 'durableObject' }),
+})

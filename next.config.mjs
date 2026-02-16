@@ -1,7 +1,7 @@
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
-    //cacheComponents: true,
+    cacheComponents: true,
     reactStrictMode: true,
     pageExtensions: ['tsx', 'ts', 'jsx', 'js'],
     reactCompiler: true
