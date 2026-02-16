@@ -1,5 +1,4 @@
-import TextSearchResults from '@/app/text-search-results'
-import Link from 'next/link'
+import RenderResults from '@/app/render-results'
 import { Suspense } from 'react'
 
 export default function HomePage() {
@@ -20,7 +19,7 @@ export default function HomePage() {
                             </div>
                         }
                     >
-                        <TextSearchResults /> 
+                        <RenderResults /> 
                     </Suspense>
         </div>
     
