@@ -16,7 +16,7 @@
         "maintained node versions"
     ],
     "dependencies": {
-        "@opennextjs/cloudflare": "https://pkg.pr.new/@opennextjs/cloudflare@1117",
+        "@opennextjs/cloudflare": "^1.16.5",
         "@tailwindcss/typography": "^0.5.16",
         "next": "16.2.0-canary.45",
         "react": "19.2.3",
