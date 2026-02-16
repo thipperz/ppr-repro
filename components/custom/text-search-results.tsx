@@ -7,9 +7,6 @@ interface TextSearchResultsProps {
 export default async function TextSearchResults({
     query,
 }: TextSearchResultsProps) {
-    'use cache'
-    cacheLife({ revalidate: 259200, stale: 3600 })
-    cacheTag(`search-${query}`)
 
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
