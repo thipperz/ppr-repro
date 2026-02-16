@@ -1,15 +1,12 @@
-import { cacheLife, cacheTag } from 'next/cache'
-
-interface TextSearchResultsProps {
-    query: string
-}
-
-export default async function TextSearchResults({
-    query,
-}: TextSearchResultsProps) {
+export default async function TextSearchResults() {
+    /* The error occurs independently of this cache setup. 
+    'use cache'
+    cacheLife({ revalidate: 259200, stale: 3600 })
+    cacheTag(`search-${query}`)*/
 
     await new Promise((resolve) => setTimeout(resolve, 2000))
 
+    //mocked results
     const results = [
         {
             id: 58584,
